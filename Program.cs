@@ -7,6 +7,51 @@ namespace ConsoleApplication1
 
         public static void Main(string[] args)
         {
+            Random random = new Random();
+            int nu=random.Next(1,10);
+            Console.WriteLine(nu);
+            for (int h= 0; h < 10; h++)
+            {
+                int numeroUno = random.Next(1, 11);
+                Console.WriteLine(numeroUno);
+            }
+            //esercizio 1 random
+            int numeroDue = random.Next(1, 7);
+            int numeroFacce = random.Next(1, 21);
+            int numeroDadi = 0;
+            Console.WriteLine("Scegli il numero di dadi");
+            string appoggio=Console.ReadLine();
+            numeroDadi=Convert.ToInt32(appoggio);
+            for (int cubo = 0; cubo < numeroDadi; cubo++)
+            {
+                Console.WriteLine("Lancio del dado: " + cubo);
+                Console.WriteLine("Numero dadi uscito: "+ random.Next(1, numeroFacce));
+            }
+
+            //esercizio 2 random
+            int lancio = 0;
+            string tentativo = "";
+            int conve = 0;
+            Console.WriteLine("Gioco del numero casuale");
+            while (true)
+            {
+                nu = random.Next(1, 50);
+                tentativo=Console.ReadLine();
+                conve=Convert.ToInt32(tentativo);
+                if (nu> conve)
+                {
+                    Console.WriteLine("Numero troppo basso, riprova");
+                }
+                else if (nu < conve)
+                {
+                    Console.WriteLine("Numero troppo alto, riprova");
+                }
+                else
+                {
+                    Console.WriteLine("Numero ESATTO, Hai indovinato!");
+                    break;
+                }
+            }
             for (int l = 1; l <= 5; l++)
             {
                 Console.WriteLine("Numero " + l);
