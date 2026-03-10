@@ -87,6 +87,99 @@ namespace ConsoleApplication1
                 w += 1;
             }
             Console.WriteLine(somma);
+            int r = 1;
+            do
+            {
+                Console.WriteLine("Numero " + r);
+                r++;
+            } while (r <= 10);
+
+            int number=0;
+            while (true)
+            {
+                Console.WriteLine("Inserisci un numero (0 per uscire) " + number);
+                number=int.Parse(Console.ReadLine());
+                if (number == 0)
+                {
+                    Console.WriteLine("Uscita in corso");
+                    break;
+                }
+                Console.WriteLine("Hai inserito questo numero: " + number);
+            }
+            //esercizio do while 1
+            string psw = "password";
+            Console.WriteLine("Password richiesta");
+            string alph=Console.ReadLine();
+            do
+            {
+                if (alph == "password") Console.WriteLine("Confermata la password");
+                else
+                {
+                    Console.WriteLine("Hai inserito password errata, riprova");
+                    alph = Console.ReadLine();
+                }
+        } while (alph != psw);
+           
+            Console.WriteLine("Password corretta");
+            //esercizio 2 do while
+            string prova = "";
+            Console.WriteLine("Inserisci un numero");
+            int passeggio=Convert.ToInt32(Console.ReadLine());
+            do
+            {
+                if(passeggio <0 && passeggio >10)
+                {
+                    Console.WriteLine("Inserisci un numero valido");
+                    prova = Console.ReadLine();
+                    passeggio = Convert.ToInt32(prova);
+                }
+            } while (passeggio < 0 && passeggio > 10);
+            
+            //esercizio 3 do while
+            Console.WriteLine("Esercizio 3");
+            Console.WriteLine("Menù, digita un numero per avviare");
+            
+            string richiesta = Console.ReadLine();
+            int intero = Convert.ToInt32(richiesta);
+            
+            do
+            {
+                Console.WriteLine("1 stampa stringa, 2 stampa intero,3 converti in float,0 exit");
+                richiesta = Console.ReadLine();
+                intero = Convert.ToInt32(richiesta);
+                
+                switch (intero)
+                {
+                    case 1:
+                        Console.WriteLine("Scelta 1: stampa questa stringa");
+                        break;
+                    case 2:
+                        Console.WriteLine("Scelta 2: stampa " + 50);
+                        break;
+                    case 3:
+                        Console.WriteLine("Scelta 3 " + Convert.ToDouble(intero));
+                        break;
+                    
+
+                }
+            } while (intero != 0); 
+            Console.WriteLine("Scelta 0: Uscita");
+            
+            //esercizio 4 do while
+            
+            string pas = "";
+            int passaggio = 0;
+            int conto = 0;
+            do
+            {
+                Console.WriteLine("Inserisci numero");
+                passaggio=Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Programma in corso");
+                if (passaggio!=0)
+                    conto ++;
+            } while(passaggio!=0);
+            Console.WriteLine("Sono stati inseriti "+conto+" numeri");
+
         }
     }
 }
