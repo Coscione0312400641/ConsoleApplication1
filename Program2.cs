@@ -12,8 +12,26 @@ public class Program2
         }
     }
 
+    class Calcolatore
+    {
+        public int SommaUno(int ms, int my)
+        {
+            return ms + my;
+        }
+
+        public int SommaUno(int ms, int my, int mz)
+        {
+            return ms + my + mz;
+        }
+
+        public double SommaUno(double ms, double mz)
+        {
+            return ms + mz;
+        }
+    }
     internal class Program
     {
+        
         static void calcola(int aa, int bb, out int sommatoria, out int prodotto)
         {
             sommatoria = aa + bb;
@@ -34,11 +52,16 @@ public class Program2
                 Console.WriteLine("Ciao sono " + nombre);
             }
 
-
+/*
             public static void Main(string[] args)
             {
                 Random random = new Random();
                 //metodi
+                Calcolatore cc=new Calcolatore();
+                Console.WriteLine(cc.SommaUno(10, 20));
+                Console.WriteLine(cc.SommaUno(10,20,49));
+                Console.WriteLine(cc.SommaUno(10.2,25.7));
+                
                 int sv;
                 int pv;
                 calcola(4,3,out sv,out pv);
@@ -150,7 +173,7 @@ public class Program2
                     Console.WriteLine(n);
                 }
 
-/*
+
             int[] numeri3 = new int[5];
             for (int i = 0; i < numeri3.Length; i++)
             {
@@ -320,8 +343,8 @@ public class Program2
                     }
 
                     Console.WriteLine();
-                }*/
-            }
+                }
+            }*/
         }
             } 
     }

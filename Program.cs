@@ -1,10 +1,10 @@
-﻿using System;
+﻿/*using System;
 
 namespace ConsoleApplication1
 {
     internal class Program
     {
-/*
+
         public static void Main(string[] args)
         {
             Random random = new Random();
@@ -224,7 +224,7 @@ namespace ConsoleApplication1
                     conto ++;
             } while(passaggio!=0);
             Console.WriteLine("Sono stati inseriti "+conto+" numeri");
-*/
-        //}
+
+        }
     }
-}
+}*/
