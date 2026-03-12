@@ -81,6 +81,7 @@ namespace ConsoleApplication1
             return max;
         }
     }
+    
     class Persona
     {
         public string nombre;
@@ -151,6 +152,26 @@ namespace ConsoleApplication1
             Console.WriteLine("Media: " + cc.Media());
             Console.WriteLine("Maggiore: " + cc.Maggiore());
 //esercizi metodi class 
+            var conto = new ContoBancario(1000);
+            conto.Deposita(200);
+            Console.WriteLine("Conto "+conto.Saldo);
+            conto.Preleva(90);
+            Console.WriteLine("Conto finale "+conto.Saldo);
+            Auto miaAuto = new Auto();
+            miaAuto.Marca = "Fiat";
+            miaAuto.NumeroPorte = 4;
+            miaAuto.Avvia();//metodo ereditato
+            miaAuto.SuonaClacson();
+            Animale[] animali =
+            {
+                new Cane(),
+                new Gatto()
+            };
+
+            foreach (Animale a in animali)
+            {
+                a.FaiVerso();
+            }
         }
     }
 
