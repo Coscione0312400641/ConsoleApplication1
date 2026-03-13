@@ -100,6 +100,23 @@ namespace ConsoleApplication1
             Console.WriteLine("Il gioco si avvia...\n");
         }
 
+        public decimal Montepremi(int players, int card_scelte)
+        {
+            return players * card_scelte * 0.50m;//50 cents a cartella
+        }
+
+        
+        public List<decimal> SoldiVinci(decimal premio)
+        {
+            List<decimal> tombolata = new List<decimal>();
+            tombolata.Add(premio*0.01m);//soldi per l'ambo
+            tombolata.Add(premio*0.09m);//soldi per il terno
+            tombolata.Add(premio*0.2m);//soldi per la quaterna
+            tombolata.Add(premio*0.3m);//soldi per la cinquina
+            tombolata.Add(premio*0.4m);//soldi per la tombola
+            return tombolata;
+            //Ambo 1%,terno 9%,quaterna 20%,cinquina 30%,tombola40%
+        }
         public static void Main(string[] args)
         {
             Cartella c1 = new Cartella();
@@ -144,6 +161,27 @@ namespace ConsoleApplication1
                     c1.StampaCartella(cartelle[k]);
                 }
             }
+            decimal cassa=c1.Montepremi(numeroGiocatori, numCartellePerGiocatore);
+            Console.WriteLine("Il montepremi da dividere è: "+cassa);
+            List<decimal> divisiPremio=c1.SoldiVinci(cassa);
+            Console.WriteLine("Ecco le possibili vincite" + divisiPremio);
+            for (int k = 0; k < divisiPremio.Count; k++)
+            {
+                if (k == 0)
+                    Console.WriteLine($"\n Ambo: ");
+                else if (k == 1)
+                    Console.WriteLine($"\n Terno: ");
+                else if (k == 2)
+                    Console.WriteLine($"\n Quaterna: "); 
+                else if (k == 3)
+                    Console.WriteLine($"\n Cinquina: ");
+                else
+                {
+                    Console.WriteLine($"\n Tombola: ");
+                }
+                Console.WriteLine(divisiPremio[k]);
+            }
+
         }
     }
 }
